@@ -1,28 +1,23 @@
 version: "3.8"
 
 services:
-  backend:
+  growth-world:
     build:
-      context: ./backend
+      context: .
       dockerfile: Dockerfile
-    container_name: growth-world-backend
+    image: viplu56/growth-world:latest
+    container_name: growth-world
     environment:
-      - DATABASE_URL=sqlite:///./data/growth_world.db
-      - DEFAULT_PARENT_PASSWORD=${DEFAULT_PARENT_PASSWORD:-growth2026}
-      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-change-me-in-prod}
-      - CORS_ORIGINS=*
+      - DATABASE_URL=${DATABASE_URL:-sqlite:///./data/growth_world.db}
+      - DEFAULT_PARENT_PASSWORD=${DEFAULT_PARENT_PASSWORD:-admin123}
+      - DEFAULT_CHILD_PASSWORD=${DEFAULT_CHILD_PASSWORD:-admin123}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-change-me}
+      - CORS_ORIGINS=${CORS_ORIGINS:-*}
     volumes:
-      - ./backend/data:/app/data
-    ports:
-      - "8000:8000"
-    restart: unless-stopped
-
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    depends_on:
-      - backend
+      - growth_data:/app/backend/data
     ports:
       - "5173:80"
     restart: unless-stopped
+
+volumes:
+  growth_data:
