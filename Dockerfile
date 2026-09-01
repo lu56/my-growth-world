@@ -30,7 +30,14 @@ RUN mkdir -p data
 
 # 复制前端静态资源 + nginx 配置
 COPY --from=frontend-build /app/dist /usr/share/nginx/html
+# 校验前端产物存在，避免空镜像
+RUN test -f /usr/share/nginx/html/index.html \
+    && echo "前端产物 OK: $(ls /usr/share/nginx/html | wc -l) 个文件"
 COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
+
+# 移除 Debian 默认站点，避免其抢占 80 端口导致显示 nginx 欢迎页
+RUN rm -f /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default \
+    && rm -rf /var/www/html/index.nginx-debian.html
 
 # 启动脚本
 COPY docker/run.sh /run.sh
