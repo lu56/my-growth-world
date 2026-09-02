@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 像素星星：象征成就/奖励/荣耀 -->
+  <defs>
+    <linearGradient id="st" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFE88A"/>
+      <stop offset="100%" stop-color="#FFB43A"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#221838"/>
+  <!-- 像素五角星（8bit） -->
+  <g fill="url(#st)" stroke="#b97a10" stroke-width="0.6">
+    <rect x="27" y="10" width="10" height="6"/>
+    <rect x="31" y="10" width="10" height="6"/>
+    <rect x="23" y="16" width="10" height="6"/>
+    <rect x="31" y="16" width="10" height="6"/>
+    <rect x="19" y="22" width="10" height="6"/>
+    <rect x="35" y="22" width="10" height="6"/>
+    <rect x="15" y="28" width="10" height="6"/>
+    <rect x="39" y="28" width="10" height="6"/>
+    <rect x="11" y="34" width="10" height="6"/>
+    <rect x="43" y="34" width="10" height="6"/>
+    <rect x="17" y="40" width="6" height="6"/>
+    <rect x="41" y="40" width="6" height="6"/>
+    <rect x="23" y="46" width="6" height="6"/>
+    <rect x="35" y="46" width="6" height="6"/>
+    <rect x="29" y="52" width="6" height="4"/>
+  </g>
+  <rect x="29" y="14" width="6" height="4" fill="#ffffff" opacity="0.6"/>
+</svg>

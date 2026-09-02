@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 工作台：象征创造/动手/建设 -->
+  <defs>
+    <linearGradient id="wTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C89A63"/>
+      <stop offset="100%" stop-color="#A87B48"/>
+    </linearGradient>
+    <linearGradient id="wL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9A6B3C"/>
+      <stop offset="100%" stop-color="#7C542B"/>
+    </linearGradient>
+    <linearGradient id="wR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8A5E32"/>
+      <stop offset="100%" stop-color="#6E4622"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#171d2b"/>
+  <!-- 工作台等轴方块 -->
+  <path d="M12 28 L32 16 L54 28 L32 40 Z" fill="url(#wTop)" stroke="#5d3b1c" stroke-width="1"/>
+  <path d="M12 28 L32 40 L32 52 L12 40 Z" fill="url(#wL)" stroke="#4a2d15" stroke-width="1"/>
+  <path d="M32 40 L54 28 L54 40 L32 52 Z" fill="url(#wR)" stroke="#4a2d15" stroke-width="1"/>
+  <!-- 工作台表面工具凹槽（两把工具标记） -->
+  <path d="M22 30 L32 25 L28 22 L22 26 Z" fill="#3a2410"/>
+  <path d="M42 30 L32 25 L36 22 L42 26 Z" fill="#3a2410"/>
+  <path d="M32 16 L50 28 L32 40 L32 16 Z" fill="#ffffff" opacity="0.18"/>
+</svg>

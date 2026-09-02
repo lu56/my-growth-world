@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 发光宝石（成长积分） -->
+  <defs>
+    <linearGradient id="gem1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7ce8ff"/>
+      <stop offset="100%" stop-color="#2b8ef5"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#1e2b3a"/>
+  <path d="M22 18 L42 18 L50 30 L32 50 L14 30 Z" fill="url(#gem1)" stroke="#cdefff" stroke-width="1.5"/>
+  <path d="M14 30 L50 30 L42 18 L22 18 Z" fill="#ffffff" opacity="0.25"/>
+  <path d="M24 22 L40 22" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+</svg>

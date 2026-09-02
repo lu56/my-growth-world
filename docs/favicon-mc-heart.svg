@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 体素红心/爱心：象征爱/亲子/健康成长 -->
+  <defs>
+    <linearGradient id="hTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF6B6B"/>
+      <stop offset="100%" stop-color="#E8444A"/>
+    </linearGradient>
+    <linearGradient id="hL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D93A44"/>
+      <stop offset="100%" stop-color="#B72A36"/>
+    </linearGradient>
+    <linearGradient id="hR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C73540"/>
+      <stop offset="100%" stop-color="#A52430"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#251a2b"/>
+  <!-- 等轴心形（像素方块堆叠） -->
+  <path d="M18 34 L32 26 L32 38 L18 46 Z" fill="url(#hL)" stroke="#7e1a24" stroke-width="1"/>
+  <path d="M32 26 L46 34 L46 46 L32 38 Z" fill="url(#hR)" stroke="#7e1a24" stroke-width="1"/>
+  <path d="M32 26 L46 34 L32 40 L18 34 Z" fill="url(#hTop)" stroke="#8a1a24" stroke-width="1"/>
+  <!-- 心形凹口：顶部两个方块 -->
+  <path d="M32 26 L42 31 L32 35 Z" fill="url(#hTop)"/>
+  <path d="M32 26 L22 31 L32 35 Z" fill="url(#hTop)"/>
+</svg>

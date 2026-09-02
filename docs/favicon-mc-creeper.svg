@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Creeper 苦力怕脸：我的世界最具识别度的元素 -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#101820"/>
+  <!-- 背景网格感 -->
+  <rect x="12" y="8" width="40" height="48" rx="6" fill="#3F7F3F"/>
+  <!-- 苦力怕脸主体（8x8 像素脸） -->
+  <g fill="#0f2b12" stroke="#0a1d0c" stroke-width="0.5">
+    <!-- 头顶 -->
+    <rect x="12" y="10" width="40" height="10"/>
+    <!-- 眼睛两排 -->
+    <rect x="16" y="20" width="10" height="12"/>
+    <rect x="38" y="20" width="10" height="12"/>
+    <rect x="16" y="32" width="10" height="8"/>
+    <rect x="38" y="32" width="10" height="8"/>
+    <!-- 嘴 -->
+    <rect x="26" y="38" width="12" height="4"/>
+    <rect x="20" y="42" width="8" height="4"/>
+    <rect x="36" y="42" width="8" height="4"/>
+    <rect x="24" y="46" width="16" height="6"/>
+  </g>
+</svg>

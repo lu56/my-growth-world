@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 我的世界 铁剑（45°斜放，经典MC式） -->
+  <defs>
+    <linearGradient id="isB" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EFF0F2"/>
+      <stop offset="100%" stop-color="#B8BAC2"/>
+    </linearGradient>
+    <linearGradient id="isEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8E9098"/>
+      <stop offset="100%" stop-color="#6E7078"/>
+    </linearGradient>
+    <linearGradient id="isH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B08044"/>
+      <stop offset="100%" stop-color="#8A5E32"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#141b28"/>
+  <g transform="rotate(-45 32 26)">
+    <g>
+      <path d="M26 4 L38 4 L38 34 L26 34 Z" fill="url(#isB)" stroke="#6a6c74" stroke-width="1"/>
+      <path d="M26 34 L38 34 L32 48 Z" fill="#9a9ca4" stroke="#6a6c74" stroke-width="1"/>
+      <path d="M32 4 L38 4 L38 48 L32 34 Z" fill="url(#isEdge)" stroke="#585a62" stroke-width="1"/>
+      <path d="M28 4 L32 4 L32 34 L28 34 Z" fill="#ffffff" opacity="0.6"/>
+    </g>
+    <path d="M14 30 L50 30 L52 38 L12 38 Z" fill="#8e9098" stroke="#585a62" stroke-width="1"/>
+    <path d="M12 38 L52 38 L50 42 L10 41 Z" fill="#6e7078" stroke="#585a62" stroke-width="0.6"/>
+    <rect x="27" y="40" width="10" height="12" fill="url(#isH)" stroke="#4a2d15" stroke-width="0.8"/>
+    <rect x="24" y="50" width="16" height="4" rx="2" fill="#6e4622" stroke="#4a2d15" stroke-width="0.6"/>
+  </g>
+</svg>

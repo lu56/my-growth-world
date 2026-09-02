@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 我的世界 钻石斧（45°斜放，经典MC式） -->
+  <defs>
+    <linearGradient id="axB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8FF5EE"/>
+      <stop offset="100%" stop-color="#37BBAE"/>
+    </linearGradient>
+    <linearGradient id="axEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2FA99C"/>
+      <stop offset="100%" stop-color="#1E8278"/>
+    </linearGradient>
+    <linearGradient id="axH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B08044"/>
+      <stop offset="100%" stop-color="#8A5E32"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0e1626"/>
+  <g transform="rotate(-45 32 28)">
+    <!-- 斧刃（宽块，右侧切削面） -->
+    <g>
+      <path d="M16 12 L30 12 L38 26 L38 42 L16 42 Z" fill="url(#axB)" stroke="#1e7a72" stroke-width="1.2"/>
+      <!-- 斧刃右侧斜切削高光 -->
+      <path d="M30 12 L38 26 L38 42 L32 42 L24 26 L30 12 Z" fill="#ffffff" opacity="0.3"/>
+      <!-- 斧刃下缘立体 -->
+      <path d="M16 42 L38 42 L38 48 L16 48 Z" fill="url(#axEdge)" stroke="#145f58" stroke-width="1"/>
+    </g>
+    <!-- 斧柄（竖直长条，穿过斧身下方） -->
+    <path d="M27 40 L33 40 L33 56 L27 56 Z" fill="url(#axH)" stroke="#4a2d15" stroke-width="1"/>
+    <!-- 柄尾 -->
+    <path d="M25 54 L35 54 L35 58 L25 58 Z" fill="#6e4622" stroke="#4a2d15" stroke-width="0.8"/>
+  </g>
+</svg>

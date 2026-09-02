@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 体素钻石：象征珍贵奖励/成就 -->
+  <defs>
+    <linearGradient id="dTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8FF5EE"/>
+      <stop offset="100%" stop-color="#54D8CC"/>
+    </linearGradient>
+    <linearGradient id="dL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#46CFC1"/>
+      <stop offset="100%" stop-color="#31B3A6"/>
+    </linearGradient>
+    <linearGradient id="dR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38C0B2"/>
+      <stop offset="100%" stop-color="#27968C"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0f1a28"/>
+  <path d="M12 26 L32 14 L54 26 L32 38 Z" fill="url(#dTop)" stroke="#1e7a72" stroke-width="1"/>
+  <path d="M12 26 L32 38 L32 50 L12 38 Z" fill="url(#dL)" stroke="#145f58" stroke-width="1"/>
+  <path d="M32 38 L54 26 L54 38 L32 50 Z" fill="url(#dR)" stroke="#145f58" stroke-width="1"/>
+  <path d="M32 16 L50 26 L32 36 L32 16 Z" fill="#ffffff" opacity="0.35"/>
+  <path d="M12 26 L32 38 L24 40 L12 30 Z" fill="#ffffff" opacity="0.18"/>
+</svg>
