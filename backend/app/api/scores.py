@@ -27,6 +27,9 @@ def _ach_brief(a):
 
 router = APIRouter(prefix="/scores", tags=["积分"])
 
+# 家长手动加/扣分记录类型（快捷加扣分、任务规则、手动调整），可被家长删除
+DELETABLE_TYPES = {"reward", "penalty", "adjust"}
+
 
 @router.post("", response_model=dict)
 def create_score(body: ScoreRecordCreate, db: Session = Depends(get_db)):
@@ -128,3 +131,35 @@ def read_dashboard(
     if not child:
         raise HTTPException(404, "尚未创建孩子档案")
     return get_dashboard(db, child.id, days=days)
+
+
+@router.delete("/{record_id}")
+def delete_score(record_id: int, db: Session = Depends(get_db)):
+    """删除家长手动加/扣分记录（奖励/惩罚/手动调整），自动回退余额、累计积分与等级"""
+    child = get_child(db)
+    if not child:
+        raise HTTPException(404, "尚未创建孩子档案")
+
+    record = db.get(ScoreRecord, record_id)
+    if not record or record.child_id != child.id:
+        raise HTTPException(404, "记录不存在")
+
+    if record.record_type not in DELETABLE_TYPES:
+        raise HTTPException(
+            400,
+            f"仅可删除家长手动加/扣分记录（奖励/惩罚/调整），该记录类型「{record.record_type}」不可删除",
+        )
+
+    delta = record.score_delta
+    reason = record.reason
+    db.delete(record)
+    db.flush()
+
+    # 回退后余额、累计积分、等级均为即时计算，无需手工扣减
+    return {
+        "deleted_id": record_id,
+        "deleted_delta": delta,
+        "deleted_reason": reason,
+        "balance": get_child_balance(db, child.id),
+        "level": get_level_progress(db, child.id),
+    }

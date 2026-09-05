@@ -61,12 +61,22 @@
                 </div>
               </div>
             </div>
-            <span
-              class="font-bold px-2 py-1 rounded-lg shrink-0"
-              :class="r.score_delta > 0 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'"
-            >
-              {{ r.score_delta > 0 ? '+' : '' }}{{ r.score_delta }}
-            </span>
+            <div class="flex items-center gap-2 shrink-0">
+              <span
+                class="font-bold px-2 py-1 rounded-lg shrink-0"
+                :class="r.score_delta > 0 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'"
+              >
+                {{ r.score_delta > 0 ? '+' : '' }}{{ r.score_delta }}
+              </span>
+              <button
+                v-if="canDelete(r.record_type)"
+                @click="onDelete(r)"
+                class="text-[10px] px-1.5 py-1 rounded border border-amber-200 text-amber-500 hover:bg-red-50 hover:text-red-500 hover:border-red-200 transition-colors"
+                title="删除该条记录（会回退对应积分与等级）"
+              >
+                删除
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -81,6 +91,12 @@
 import { ref, computed, onMounted } from 'vue'
 import { api } from '@/api'
 import PixelIcon from '@/components/game/PixelIcon.vue'
+import { useToastStore } from '@/stores/toast'
+
+const toast = useToastStore()
+
+// 可被家长删除的记录类型（与后端 DELETABLE_TYPES 一致）
+const deletableTypes = new Set(['reward', 'penalty', 'adjust'])
 
 const ranges = [
   { key: '7d', label: '近7天', days: 7 },
@@ -170,4 +186,22 @@ onMounted(async () => {
     console.error(e)
   }
 })
+
+function canDelete(t: string): boolean {
+  return deletableTypes.has(t)
+}
+
+async function onDelete(r: any) {
+  const sign = r.score_delta > 0 ? '+' : ''
+  if (!confirm(`确定删除这条${typeLabel(r.record_type)}记录「${r.reason || typeLabel(r.record_type)}」${sign}${r.score_delta}？\n删除后将回退对应积分与等级，不可恢复。`)) {
+    return
+  }
+  try {
+    await api.deleteScore(r.id)
+    records.value = await api.getHistory(500)
+    toast.success('已删除并回退积分与等级')
+  } catch (e: any) {
+    toast.error(e.message || '删除失败')
+  }
+}
 </script>

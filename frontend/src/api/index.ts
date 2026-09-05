@@ -74,6 +74,7 @@ export const api = {
   deleteTask: (id: number) => request(`/tasks/${id}`, { method: 'DELETE' }),
   // 积分
   addScore: (body: any) => request('/scores', { method: 'POST', body }),
+  deleteScore: (id: number) => request(`/scores/${id}`, { method: 'DELETE' }),
   getBalance: () => request('/scores/balance'),
   getHistory: (limit = 50) => request(`/scores/history?limit=${limit}`),
   getDashboard: (days = 14) => request(`/scores/dashboard?days=${days}`),

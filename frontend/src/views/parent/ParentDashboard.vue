@@ -293,8 +293,10 @@ async function record(t: any) {
       playSound('penalty')
     }
     effectStore.handleApiResponse(res)
+    toast.success(`已记录「${t.name}」${t.score_value > 0 ? '+' : ''}${t.score_value}`)
   } catch (e: any) {
     limitHint.value = e.message || '记录失败'
+    toast.error(e.message || '记录失败')
   } finally {
     loading.value = false
   }
