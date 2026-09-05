@@ -153,7 +153,7 @@ def delete_score(record_id: int, db: Session = Depends(get_db)):
     delta = record.score_delta
     reason = record.reason
     db.delete(record)
-    db.flush()
+    db.commit()
 
     # 回退后余额、累计积分、等级均为即时计算，无需手工扣减
     return {
